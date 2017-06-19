@@ -1,18 +1,26 @@
 var contentEl = document.querySelector('.content');
+var headerEl = document.querySelector('h1');
 
 elements.forEach(function(element, i) {
-    var div = document.createElement('div');
-    var symSpan = document.createElement('span');
-    var numSpan = document.createElement('span');
+    var elDiv, nameDiv, elContent, nameContent;
     
-    var symText = document.createTextNode(element.symbol);
-    var numText = document.createTextNode(element.number);
+    elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + "</div>";
+    nameContent = document.createTextNode(element.name);
     
-    symSpan.appendChild(symText);
-    numSpan.appendChild(numText);
+    elDiv = document.createElement('div');
+    elDiv.className = 'element';
+    elDiv.innerHTML = elContent;
     
-    div.appendChild(numSpan);
-    div.appendChild(symSpan);
+    nameDiv = document.createElement('div');
+    nameDiv.className = 'hidden';
+    nameDiv.appendChild(nameContent);
     
-    contentEl.appendChild(div);
+    
+    contentEl.appendChild(elDiv);
+    contentEl.appendChild(nameDiv);
+    
+    
+    elDiv.addEventListener('hover', function() {
+        console.log(this);
+    });
 });
