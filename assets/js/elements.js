@@ -21,7 +21,7 @@ var elements = [
         number: "3",
         symbol: "Li",
         weight: "6.941",
-        name: "Lithiu,",
+        name: "Lithium",
         type: "nonmetal",
         year: "1817"
     },

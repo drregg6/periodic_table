@@ -18,9 +18,21 @@ elements.forEach(function(element, i) {
     
     contentEl.appendChild(elDiv);
     contentEl.appendChild(nameDiv);
-    
-    
-    elDiv.addEventListener('hover', function() {
-        console.log(this);
+});
+
+
+
+
+var elements = document.querySelectorAll('.element');
+
+elements.forEach(function(element) {
+    element.addEventListener('click', function() {
+        var text = this.nextSibling.textContent;
+        
+        if (headerEl.textContent === text) {
+            headerEl.textContent = 'Periodic Table';
+        } else {
+            headerEl.textContent = text;
+        }
     });
 });

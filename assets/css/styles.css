@@ -17,14 +17,10 @@
     display: none;
 }
 
-/*
-.content div {
-    border: 1px solid black;
-    
-    padding: 5px;
-    margin: 25px;
+.content {
+    display: flex;
+    flex-wrap: wrap;
 }
-*/
 
 .element {
     border: 1px solid black;
