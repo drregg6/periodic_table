@@ -24,18 +24,16 @@
 
 .element {
     border: 1px solid black;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     
     padding: 10px;
-    margin: 25px auto;
+    margin: 10px auto;
     
     position: relative;
 }
 
 .el-symbol {
-    width: 100%;
-    
     position: absolute;
     top: 50%;
     left: 0;
@@ -53,4 +51,13 @@
     
     top: 5%;
     right: 5%;
+}
+
+.el-weight {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    
+    font-size: 12px;
 }

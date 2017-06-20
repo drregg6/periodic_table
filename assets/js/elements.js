@@ -241,4 +241,236 @@ var elements = [
         type: "nonmetal",
         year: "ancient"
     },
+    {
+        number: "31",
+        symbol: "Ga",
+        weight: "69.723",
+        name: "Gallium",
+        type: "nonmetal",
+        year: "1875"
+    },
+    {
+        number: "32",
+        symbol: "Ge",
+        weight: "72.64",
+        name: "Germanium",
+        type: "nonmetal",
+        year: "1886"
+    },
+    {
+        number: "33",
+        symbol: "As",
+        weight: "74.922",
+        name: "Arsenic",
+        type: "nonmetal",
+        year: "ancient"
+    },
+    {
+        number: "34",
+        symbol: "Se",
+        weight: "78.96",
+        name: "Seleniu,",
+        type: "nonmetal",
+        year: "1817"
+    },
+    {
+        number: "35",
+        symbol: "Br",
+        weight: "79.904",
+        name: "Bromine",
+        type: "nonmetal",
+        year: "1826"
+    },
+    {
+        number: "36",
+        symbol: "Kr",
+        weight: "83.8",
+        name: "Krypton",
+        type: "nonmetal",
+        year: "1898"
+    },
+    {
+        number: "37",
+        symbol: "Rb",
+        weight: "85.468",
+        name: "Rubidium",
+        type: "nonmetal",
+        year: "1861"
+    },
+    {
+        number: "38",
+        symbol: "Sr",
+        weight: "87.62",
+        name: "Strontium",
+        type: "nonmetal",
+        year: "1790"
+    },
+    {
+        number: "39",
+        symbol: "Y",
+        weight: "88.906",
+        name: "Yttrium",
+        type: "nonmetal",
+        year: "1794"
+    },
+    {
+        number: "40",
+        symbol: "Zr",
+        weight: "91.224",
+        name: "Zirconium",
+        type: "nonmetal",
+        year: "1789"
+    },
+    {
+        number: "41",
+        symbol: "Nb",
+        weight: "92.906",
+        name: "Niobium",
+        type: "nonmetal",
+        year: "1801"
+    },
+    {
+        number: "42",
+        symbol: "Mo",
+        weight: "95.94",
+        name: "Molybdenum",
+        type: "nonmetal",
+        year: "1781"
+    },
+    {
+        number: "43",
+        symbol: "Tc",
+        weight: "98.0",
+        name: "Technetium",
+        type: "nonmetal",
+        year: "1937"
+    },
+    {
+        number: "44",
+        symbol: "Ru",
+        weight: "101.07",
+        name: "Ruthenium",
+        type: "nonmetal",
+        year: "1844"
+    },
+    {
+        number: "45",
+        symbol: "Rh",
+        weight: "102.906",
+        name: "Rhodium",
+        type: "nonmetal",
+        year: "1803"
+    },
+    {
+        number: "46",
+        symbol: "Pd",
+        weight: "106.42",
+        name: "Palladium",
+        type: "nonmetal",
+        year: "1803"
+    },
+    {
+        number: "47",
+        symbol: "Ag",
+        weight: "107.868",
+        name: "Silver",
+        type: "nonmetal",
+        year: "ancient"
+    },
+    {
+        number: "48",
+        symbol: "Cd",
+        weight: "112.411",
+        name: "Cadmium",
+        type: "nonmetal",
+        year: "1817"
+    },
+    {
+        number: "49",
+        symbol: "In",
+        weight: "114.818",
+        name: "Indium",
+        type: "nonmetal",
+        year: "1863"
+    },
+    {
+        number: "50",
+        symbol: "Sn",
+        weight: "118.71",
+        name: "Tin",
+        type: "nonmetal",
+        year: "ancient"
+    },
+    {
+        number: "51",
+        symbol: "Sb",
+        weight: "121.76",
+        name: "Antimony",
+        type: "nonmetal",
+        year: "ancient"
+    },
+    {
+        number: "52",
+        symbol: "Te",
+        weight: "127.6",
+        name: "Tellurium",
+        type: "nonmetal",
+        year: "1783"
+    },
+    {
+        number: "53",
+        symbol: "I",
+        weight: "126.905",
+        name: "Iodine",
+        type: "nonmetal",
+        year: "1811"
+    },
+    {
+        number: "54",
+        symbol: "Xe",
+        weight: "131.293",
+        name: "Xenon",
+        type: "nonmetal",
+        year: "1898"
+    },
+    {
+        number: "55",
+        symbol: "Cs",
+        weight: "132.906",
+        name: "Cesium",
+        type: "nonmetal",
+        year: "1860"
+    },
+    {
+        number: "56",
+        symbol: "Ba",
+        weight: "137.327",
+        name: "Barium",
+        type: "nonmetal",
+        year: "1808"
+    },
+    {
+        number: "57",
+        symbol: "La",
+        weight: "138.906",
+        name: "Lanthanum",
+        type: "nonmetal",
+        year: "1839"
+    },
+    {
+        number: "58",
+        symbol: "Ce",
+        weight: "140.116",
+        name: "Cerium",
+        type: "nonmetal",
+        year: "1803"
+    },
+    {
+        number: "59",
+        symbol: "Pr",
+        weight: "140.908",
+        name: "Praseodymium",
+        type: "nonmetal",
+        year: "1885"
+    }
 ];

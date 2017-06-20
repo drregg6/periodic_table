@@ -4,7 +4,7 @@ var headerEl = document.querySelector('h1');
 elements.forEach(function(element, i) {
     var elDiv, nameDiv, elContent, nameContent;
     
-    elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + "</div>";
+    elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
     nameContent = document.createTextNode(element.name);
     
     elDiv = document.createElement('div');
