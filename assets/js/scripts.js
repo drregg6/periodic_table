@@ -1,9 +1,9 @@
-var elDiv, nameDiv, elContent, nameContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements, width;
+var elDiv, nameDiv, elContent, nameContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements, width, i;
 
 periodicTable = document.querySelector('.periodic-table');
 columns = document.querySelectorAll('.col');
 
-expandedTable = document.querySelector('.expanded-table')
+expandedTable = document.querySelector('.expanded-table');
 rows = document.querySelectorAll('.row');
 
 headerEl = document.querySelector('h1');
@@ -49,11 +49,9 @@ elements = document.querySelectorAll('.element');
 elements.forEach(function(element) {
     element.addEventListener('mouseover', function() {
         var text = this.nextSibling.textContent;
-        console.log(this);
         
-        for (var i = 0; i < elementTypes.length; i++) {
+        for (i = 0; i < elementTypes.length; i++) {
             if (this.classList.contains(elementTypes[i].type)) {
-                console.log(elementTypes[i].color);
                 headerEl.style.color = elementTypes[i].color;
             }
         }
@@ -64,7 +62,7 @@ elements.forEach(function(element) {
         
         headerEl.style.color = 'black';
         headerEl.textContent = text;
-    })
+    });
 });
 
 window.onresize = getWidth;

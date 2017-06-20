@@ -1,7 +1,6 @@
-// all TYPES will need to be updated
 /*
 
-is this a mongoDB database simplified? i think sooo
+TODO: add fun facts!
 
 */
 
