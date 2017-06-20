@@ -78,22 +78,26 @@
     color: brown;
 }
 .nonmetal {
-    border-color: aquamarine;
-    color: aquamarine;
+    color: lawngreen;
+    border-color: lawngreen;
+}
+.basic-metal {
+    border-color: darkorange;
+    color: darkorange;
 }
 .semimetal {
-    border-color: pink;
-    color: pink;
+    border-color: orange;
+    color: orange;
 }
 .transition-metal {
-    color: black;
-    border-color: black;
+    color: deeppink;
+    border-color: deeppink;
 }
 .theoretical {
     color: gray;
     border-color: gray;
 }
 .halogen {
-    color: forestgreen;
-    border-color: forestgreen;
+    color: aqua;
+    border-color: aqua;
 }

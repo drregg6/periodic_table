@@ -8,10 +8,27 @@ elements.forEach(function(element, i) {
     nameContent = document.createTextNode(element.name);
     
     elDiv = document.createElement('div');
-    elDiv.className = 'element';
-//    if (element.type === 'noble gas') {
-//        elDiv.classList.add('noble-gas');
+    elDiv.classList.add('element');
+    elDiv.innerHTML = elContent;
+    
+    nameDiv = document.createElement('div');
+    nameDiv.className = 'hidden';
+    nameDiv.appendChild(nameContent);
+    
+    
+//    switch (element.number) {
+//        case '1':
+//        case '3':
+//        case '11':
+//        case '19':
+//        case '37':
+//        case '55':
+//        case '87':
+//            elContent = '<div class="row"><div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
+//            
 //    }
+    
+    
     switch (element.type) {
         case 'noble gas':
             elDiv.classList.add('noble-gas');
@@ -41,11 +58,7 @@ elements.forEach(function(element, i) {
             elDiv.classList.add('theoretical');
             break;
     }
-    elDiv.innerHTML = elContent;
     
-    nameDiv = document.createElement('div');
-    nameDiv.className = 'hidden';
-    nameDiv.appendChild(nameContent);
     
     
     contentEl.appendChild(elDiv);
