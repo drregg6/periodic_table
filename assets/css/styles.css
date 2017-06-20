@@ -31,6 +31,8 @@
     margin: 10px auto;
     
     position: relative;
+    
+    cursor: pointer;
 }
 
 .el-symbol {
@@ -40,13 +42,14 @@
     right: 0;
     
     font-weight: bold;
-    font-size: 28px;
+    font-size: 2em;
     
     line-height: 100px;
     transform: translateY(-50%);
 }
 
 .el-number {
+    font-size: 0.75em;
     position: absolute;
     
     top: 5%;
@@ -59,5 +62,38 @@
     left: 0;
     right: 0;
     
-    font-size: 12px;
+    font-size: 0.75em;
+}
+
+.noble-gas {
+    border-color: blue;
+    color: blue;
+}
+.alkali-metal {
+    border-color: red;
+    color: red;
+}
+.alkaline-earth {
+    border-color: brown;
+    color: brown;
+}
+.nonmetal {
+    border-color: aquamarine;
+    color: aquamarine;
+}
+.semimetal {
+    border-color: pink;
+    color: pink;
+}
+.transition-metal {
+    color: black;
+    border-color: black;
+}
+.theoretical {
+    color: gray;
+    border-color: gray;
+}
+.halogen {
+    color: forestgreen;
+    border-color: forestgreen;
 }

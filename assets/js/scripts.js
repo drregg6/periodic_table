@@ -9,6 +9,38 @@ elements.forEach(function(element, i) {
     
     elDiv = document.createElement('div');
     elDiv.className = 'element';
+//    if (element.type === 'noble gas') {
+//        elDiv.classList.add('noble-gas');
+//    }
+    switch (element.type) {
+        case 'noble gas':
+            elDiv.classList.add('noble-gas');
+            break;
+        case 'alkali metal':
+            elDiv.classList.add('alkali-metal');
+            break;
+        case 'nonmetal':
+            elDiv.classList.add('nonmetal');
+            break;
+        case 'alkaline earth':
+            elDiv.classList.add('alkaline-earth');
+            break;
+        case 'semimetal':
+            elDiv.classList.add('semimetal');
+            break;
+        case 'halogen':
+            elDiv.classList.add('halogen');
+            break;
+        case 'transition metal':
+            elDiv.classList.add('transition-metal');
+            break;
+        case 'basic metal':
+            elDiv.classList.add('basic-metal');
+            break;
+        case 'theoretical':
+            elDiv.classList.add('theoretical');
+            break;
+    }
     elDiv.innerHTML = elContent;
     
     nameDiv = document.createElement('div');
