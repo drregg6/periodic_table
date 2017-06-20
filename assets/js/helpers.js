@@ -1,3 +1,52 @@
+var elementTypes = [
+    {
+        type: 'noble-gas',
+        color: 'blue'
+    },
+    {
+        type: 'alkali-metal',
+        color: 'red'
+    },
+    {
+        type: 'alkaline-earth',
+        color: 'brown'
+    },
+    {
+        type: 'nonmetal',
+        color: 'lawngreen'
+    },
+    {
+        type: 'basic-metal',
+        color: 'darkorange'
+    },
+    {
+        type: 'semimetal',
+        color: 'orange'
+    },
+    {
+        type: 'transition-metal',
+        color: 'deeppink'
+    },
+    {
+        type: 'theoretical',
+        color: 'gray'
+    },
+    {
+        type: 'halogen',
+        color: 'aqua'
+    },
+    {
+        type: 'actinide',
+        color: 'fuchsia'
+    },
+    {
+        type: 'lanthanide',
+        color: 'coral'
+    }
+];
+
+
+
 function elementPlacement(num) {
     switch (num) {
         case '1':
@@ -226,5 +275,19 @@ function elementType(type) {
         case 'lanthanide':
             elDiv.classList.add('lanthanide');
             break;
+    }
+}
+
+
+
+function getWidth() {
+    width = window.innerWidth;
+    
+    if (width > 960) {
+        periodicTable.classList.add('flex-center');
+        expandedTable.classList.add('flex-center');
+    } else if (periodicTable.classList.contains('flex-center')) {
+        periodicTable.classList.remove('flex-center');
+        expandedTable.classList.remove('flex-center');
     }
 }

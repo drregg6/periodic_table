@@ -1,4 +1,4 @@
-var elDiv, nameDiv, elContent, nameContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements;
+var elDiv, nameDiv, elContent, nameContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements, width;
 
 periodicTable = document.querySelector('.periodic-table');
 columns = document.querySelectorAll('.col');
@@ -49,12 +49,23 @@ elements = document.querySelectorAll('.element');
 elements.forEach(function(element) {
     element.addEventListener('mouseover', function() {
         var text = this.nextSibling.textContent;
+        console.log(this);
         
+        for (var i = 0; i < elementTypes.length; i++) {
+            if (this.classList.contains(elementTypes[i].type)) {
+                console.log(elementTypes[i].color);
+                headerEl.style.color = elementTypes[i].color;
+            }
+        }
         headerEl.textContent = text;
     });
     element.addEventListener('mouseout', function() {
         var text = 'Periodic Table';
         
+        headerEl.style.color = 'black';
         headerEl.textContent = text;
     })
 });
+
+window.onresize = getWidth;
+window.onload = getWidth;

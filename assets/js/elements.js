@@ -274,7 +274,7 @@ var elements = [
         number: "34",
         symbol: "Se",
         weight: "78.96",
-        name: "Seleniu,",
+        name: "Selenium",
         type: "nonmetal",
         year: "1817"
     },
@@ -697,7 +697,7 @@ var elements = [
     {
         number: "87",
         symbol: "Fr",
-        weight: "223",
+        weight: "223.0",
         name: "Francium",
         type: "alkali metal",
         year: "1939"
@@ -746,9 +746,9 @@ var elements = [
         number: "93",
         symbol: "Np",
         weight: "237.0",
-        name: "Uranium",
+        name: "Neptunium",
         type: "actinide",
-        year: "1789"
+        year: "1940"
     },
     {
         number: "94",

@@ -6,22 +6,59 @@
 
 .container {
     width: 100%;
-    margin: 0 auto;
     text-align: center;
     
-    font-family: Verdana;
+    font-family: 'Lato', Verdana, Helvetica;
     font-size: 16px;
 }
 
-.hidden {
-    display: none;
+/* ------------------------------------------
+
+flex
+
+------------------------------------------- */
+
+.flex {
+    display: flex;
 }
 
-.periodic-table,
-.expanded-table {
-    display: flex;
+.flex-center {
     justify-content: center;
 }
+
+.expanded-table {
+    flex-wrap: wrap;
+/*    width: 80%;*/
+    
+    margin: 5px auto;
+/*    margin: 10px auto;*/
+}
+
+.col {
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    margin: 0 1px;
+}
+.col .element,
+.col .outline {
+    margin: 1px 0;
+}
+
+.row {
+    justify-content: center;
+    
+    margin: 1px 0;
+}
+.row .element {
+    margin: 0 1px;
+}
+
+/* ------------------------------------------
+
+element div
+
+------------------------------------------- */
 
 .element,
 .outline {
@@ -29,43 +66,58 @@
     width: 60px;
     height: 60px;
     
-    padding: 10px;
-    margin: 5% 5%;
-    
     position: relative;
-    
+    align-self: center;
     cursor: pointer;
 }
 
 .el-symbol {
+    font-weight: bold;
+    font-size: 1.5em;
+    
+    /* symbol centered */
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
-    
-    font-weight: bold;
-    font-size: 1.5em;
-    
     line-height: 60px;
     transform: translateY(-50%);
 }
-
-.el-number {
+.el-number,
+.el-weight {
     font-size: 0.65em;
-    position: absolute;
     
+    position: absolute;
+}
+.el-number {
     top: 5%;
     right: 5%;
 }
-
 .el-weight {
-    position: absolute;
     bottom: 5%;
     left: 0;
     right: 0;
-    
-    font-size: 0.65em;
 }
+
+/* ------------------------------------------
+
+helper classes
+
+------------------------------------------- */
+
+.hidden {
+    display: none;
+}
+
+.outline {
+    visibility: hidden;
+}
+
+/* ------------------------------------------
+
+element div colors
+
+------------------------------------------- */
 
 .noble-gas {
     border-color: blue;
@@ -112,30 +164,14 @@
     border-color: coral;
 }
 
-.col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    
-    margin: 0 .25%;
-}
+/* ------------------------------------------
 
-.expanded-table {
-    flex-wrap: wrap;
-    margin: 10px auto;
-    width: 80%;
-}
+header
 
-.row {
-    display: flex;
-    justify-content: center;
-    
-    margin: .25% 0;
-}
-.row .element {
-    margin: 0 .25%;
-}
+------------------------------------------- */
 
-.outline {
-    visibility: hidden;
+h1 {
+    margin: 0 auto;
+    font-size: 3.5em;
+    font-style: italic;
 }
