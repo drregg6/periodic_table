@@ -1,10 +1,10 @@
-var elDiv, nameDiv, elContent, nameContent, periodicTable, columns, expandedTable, rows, headerEl, elements;
+var elDiv, nameDiv, elContent, nameContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements;
 
 periodicTable = document.querySelector('.periodic-table');
 columns = document.querySelectorAll('.col');
 
 expandedTable = document.querySelector('.expanded-table')
-rows = document.querySelectorAll('.rows');
+rows = document.querySelectorAll('.row');
 
 headerEl = document.querySelector('h1');
 
@@ -16,6 +16,12 @@ elements.forEach(function(element, i) {
     // create element div's content and its hidden node with information
     elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
     nameContent = document.createTextNode(element.name);
+    
+    if (element.number === '57' || element.number === '89') {
+        elPlaceholder = document.createElement('div');
+        elPlaceholder.classList.add('outline');
+    }
+    
     
     // create the element div with a universal class name and attach the content
     elDiv = document.createElement('div');
@@ -220,9 +226,49 @@ function elementPlacement(num) {
             columns[17].appendChild(nameDiv);
             break;
         case '57':
+            columns[2].appendChild(elPlaceholder);
+            rows[0].appendChild(elDiv);
+            rows[0].appendChild(nameDiv);
+            break;
         case '89':
-            elDiv.classList.add('outline');
-            columns[2].appendChild(elDiv);
+            columns[2].appendChild(elPlaceholder);
+            rows[1].appendChild(elDiv);
+            rows[1].appendChild(nameDiv);
+            break;
+        case '58':
+        case '59':
+        case '60':
+        case '61':
+        case '62':
+        case '63':
+        case '64':
+        case '65':
+        case '66':
+        case '67':
+        case '68':
+        case '69':
+        case '70':
+        case '71':
+            rows[0].appendChild(elDiv);
+            rows[0].appendChild(nameDiv);
+            break;
+        case '90':
+        case '91':
+        case '92':
+        case '93':
+        case '94':
+        case '95':
+        case '96':
+        case '97':
+        case '98':
+        case '99':
+        case '100':
+        case '101':
+        case '102':
+        case '103':
+            rows[1].appendChild(elDiv);
+            rows[1].appendChild(nameDiv);
+            break;
     }
 }
 
