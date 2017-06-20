@@ -875,7 +875,7 @@ var elements = [
         symbol: "Mt",
         weight: "268.0",
         name: "Meitnerium",
-        type: "post-transition metal",
+        type: "theoretical",
         year: "1982"
     },
     {
@@ -883,7 +883,7 @@ var elements = [
         symbol: "Ds",
         weight: "281.0",
         name: "Darmstadtium",
-        type: "post-transition metal",
+        type: "theoretical",
         year: "1994"
     },
     {
@@ -891,7 +891,7 @@ var elements = [
         symbol: "Rg",
         weight: "282.0",
         name: "Roentgenium",
-        type: "post-transition metal",
+        type: "theoretical",
         year: "1994"
     },
     {

@@ -5,7 +5,7 @@
 }
 
 .container {
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     
@@ -17,18 +17,18 @@
     display: none;
 }
 
-.content {
+.periodic-table {
     display: flex;
     flex-wrap: wrap;
 }
 
 .element {
     border: 1px solid black;
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     
     padding: 10px;
-    margin: 10px auto;
+    margin: 5% 5%;
     
     position: relative;
     
@@ -42,9 +42,9 @@
     right: 0;
     
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
     
-    line-height: 100px;
+    line-height: 60px;
     transform: translateY(-50%);
 }
 
@@ -100,4 +100,24 @@
 .halogen {
     color: aqua;
     border-color: aqua;
+}
+.actinide {
+    color: fuchsia;
+    border-color: fuchsia;
+}
+.lanthanide {
+    color: coral;
+    border-color: coral;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    margin: 0 .25%;
+}
+
+.outline {
+    visibility: hidden;
 }

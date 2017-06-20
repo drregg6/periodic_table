@@ -1,34 +1,35 @@
-var contentEl = document.querySelector('.content');
-var headerEl = document.querySelector('h1');
+var elDiv, nameDiv, elContent, nameContent, periodicTable, columns, expandedTable, rows, headerEl, elements;
 
+periodicTable = document.querySelector('.periodic-table');
+columns = document.querySelectorAll('.col');
+
+expandedTable = document.querySelector('.expanded-table')
+rows = document.querySelectorAll('.rows');
+
+headerEl = document.querySelector('h1');
+
+
+
+// creating and inserting elements into the table
 elements.forEach(function(element, i) {
-    var elDiv, nameDiv, elContent, nameContent;
     
+    // create element div's content and its hidden node with information
     elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
     nameContent = document.createTextNode(element.name);
     
+    // create the element div with a universal class name and attach the content
     elDiv = document.createElement('div');
     elDiv.classList.add('element');
     elDiv.innerHTML = elContent;
     
+    // create the hidden node's div with universal class name and attach the content
     nameDiv = document.createElement('div');
     nameDiv.className = 'hidden';
     nameDiv.appendChild(nameContent);
     
     
-//    switch (element.number) {
-//        case '1':
-//        case '3':
-//        case '11':
-//        case '19':
-//        case '37':
-//        case '55':
-//        case '87':
-//            elContent = '<div class="row"><div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
-//            
-//    }
     
-    
+    // element is given its color
     switch (element.type) {
         case 'noble gas':
             elDiv.classList.add('noble-gas');
@@ -57,27 +58,190 @@ elements.forEach(function(element, i) {
         case 'theoretical':
             elDiv.classList.add('theoretical');
             break;
+        case 'actinide':
+            elDiv.classList.add('actinide');
+            break;
+        case 'lanthanide':
+            elDiv.classList.add('lanthanide');
+            break;
     }
     
     
     
-    contentEl.appendChild(elDiv);
-    contentEl.appendChild(nameDiv);
+    
+    // insert the element
+    elementPlacement(element.number);
 });
 
 
 
+function elementPlacement(num) {
+    switch (num) {
+        case '1':
+        case '3':
+        case '11':
+        case '19':
+        case '37':
+        case '55':
+        case '87':
+            columns[0].appendChild(elDiv);
+            columns[0].appendChild(nameDiv);
+            break;
+        case '4':
+        case '12':
+        case '20':
+        case '38':
+        case '56':
+        case '88':
+            columns[1].appendChild(elDiv);
+            columns[1].appendChild(nameDiv);
+            break;
+        case '21':
+        case '39':
+            columns[2].appendChild(elDiv);
+            columns[2].appendChild(nameDiv);
+            break;
+        case '22':
+        case '40':
+        case '72':
+        case '104':
+            columns[3].appendChild(elDiv);
+            columns[3].appendChild(nameDiv);
+            break;
+        case '23':
+        case '41':
+        case '73':
+        case '105':
+            columns[4].appendChild(elDiv);
+            columns[4].appendChild(nameDiv);
+            break;
+        case '24':
+        case '42':
+        case '74':
+        case '106':
+            columns[5].appendChild(elDiv);
+            columns[5].appendChild(nameDiv);
+            break;
+        case '25':
+        case '43':
+        case '75':
+        case '107':
+            columns[6].appendChild(elDiv);
+            columns[6].appendChild(nameDiv);
+            break;
+        case '26':
+        case '44':
+        case '76':
+        case '108':
+            columns[7].appendChild(elDiv);
+            columns[7].appendChild(nameDiv);
+            break;
+        case '27':
+        case '45':
+        case '77':
+        case '109':
+            columns[8].appendChild(elDiv);
+            columns[8].appendChild(nameDiv);
+            break;
+        case '28':
+        case '46':
+        case '78':
+        case '110':
+            columns[9].appendChild(elDiv);
+            columns[9].appendChild(nameDiv);
+            break;
+        case '29':
+        case '47':
+        case '79':
+        case '111':
+            columns[10].appendChild(elDiv);
+            columns[10].appendChild(nameDiv);
+            break;
+        case '30':
+        case '48':
+        case '80':
+        case '112':
+            columns[11].appendChild(elDiv);
+            columns[11].appendChild(nameDiv);
+            break;
+        case '5':
+        case '13':
+        case '31':
+        case '49':
+        case '81':
+        case '113':
+            columns[12].appendChild(elDiv);
+            columns[12].appendChild(nameDiv);
+            break;
+        case '6':
+        case '14':
+        case '32':
+        case '50':
+        case '82':
+        case '114':
+            columns[13].appendChild(elDiv);
+            columns[13].appendChild(nameDiv);
+            break;
+        case '7':
+        case '15':
+        case '33':
+        case '51':
+        case '83':
+        case '115':
+            columns[14].appendChild(elDiv);
+            columns[14].appendChild(nameDiv);
+            break;
+        case '8':
+        case '16':
+        case '34':
+        case '52':
+        case '84':
+        case '116':
+            columns[15].appendChild(elDiv);
+            columns[15].appendChild(nameDiv);
+            break;
+        case '9':
+        case '17':
+        case '35':
+        case '53':
+        case '85':
+        case '117':
+            columns[16].appendChild(elDiv);
+            columns[16].appendChild(nameDiv);
+            break;
+        case '2':
+        case '10':
+        case '18':
+        case '36':
+        case '54':
+        case '86':
+        case '118':
+            columns[17].appendChild(elDiv);
+            columns[17].appendChild(nameDiv);
+            break;
+        case '57':
+        case '89':
+            elDiv.classList.add('outline');
+            columns[2].appendChild(elDiv);
+    }
+}
 
-var elements = document.querySelectorAll('.element');
+
+
+
+elements = document.querySelectorAll('.element');
+
+
 
 elements.forEach(function(element) {
-    element.addEventListener('click', function() {
+    element.addEventListener('mouseover', function() {
         var text = this.nextSibling.textContent;
         
-        if (headerEl.textContent === text) {
-            headerEl.textContent = 'Periodic Table';
-        } else {
-            headerEl.textContent = text;
-        }
+        headerEl.textContent = text;
     });
+    element.addEventListener('mouseout', function() {
+        var text = 'Periodic Table';
+        
+        headerEl.textContent = text;
+    })
 });
