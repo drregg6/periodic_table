@@ -1,4 +1,4 @@
-var elDiv, modalDiv, elContent, modalContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements, width, i;
+var elDiv, modalDiv, elContent, modalContent, elPlaceholder, periodicTable, columns, expandedTable, rows, headerEl, elements, width, i, modal;
 
 periodicTable = document.querySelector('.periodic-table');
 columns = document.querySelectorAll('.col');
@@ -15,7 +15,7 @@ elements.forEach(function(element, i) {
     
     // create element div's content and its hidden node with information
     elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
-    modalContent = '<div class="modal-content"><div class="modal-content-name">' + element.name + '</div><div class="modal-content-weight">' + element.weight + '</div><div class="modal-content-type">' + element.type + '</div><div class="modal-content-year">' + element.year + '</div></div>';
+    modalContent = '<div class="modal-content"><div class="modal-content-text"><p>' + element.name + '</p><p>' + element.type + '</p><p>' + element.year + '</p></div><div class="modal-content-weight">' + element.weight + '</div><div class="modal-content-number">' + element.number + '</div></div>';
     
     if (element.number === '57' || element.number === '89') {
         elPlaceholder = document.createElement('div');
@@ -45,16 +45,11 @@ elements.forEach(function(element, i) {
 // event listener for each element div
 elements = document.querySelectorAll('.element');
 
-
 elements.forEach(function(element) {
-    element.addEventListener('click', function() {
-        var modal = this.nextSibling;
-        console.log(modal);
-        
-        modal.style.display = "block";
-    });
+    element.addEventListener('click', displayModal);
 });
 
 
 window.onresize = getWidth;
 window.onload = getWidth;
+window.onclick = closeModal;

@@ -306,7 +306,7 @@ function getWidth() {
 
 
 function revealFullName() {
-    var text = this.nextSibling.firstChild.firstChild.textContent;
+    var text = this.nextSibling.firstChild.firstChild.firstChild.textContent;
 
     for (var i = 0; i < elementTypes.length; i++) {
         if (this.classList.contains(elementTypes[i].type)) {
@@ -322,4 +322,19 @@ function hideFullName() {
 
     headerEl.style.color = 'black';
     headerEl.textContent = text;
+}
+
+
+function displayModal() {
+    modal = this.nextSibling;
+    console.log(modal);
+
+    modal.style.display = 'block';
+}
+
+
+function closeModal(ev) {
+    if (ev.target === modal) {
+        modal.style.display = 'none';
+    }
 }
