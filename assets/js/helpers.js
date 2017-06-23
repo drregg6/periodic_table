@@ -1,52 +1,76 @@
 var elementTypes = [
     {
         type: 'noble-gas',
-        color: 'blue'
+        color: '#0099ff',
+        colorDark: '#001a80',
+        colorLight: '#7fffff'
     },
     {
         type: 'alkali-metal',
-        color: 'red'
+        color: '#612005',
+        colorDark: '#2e0000',
+        colorLight: '#ae6d52'
     },
     {
         type: 'alkaline-earth',
-        color: 'brown'
+        color: '#90f',
+        colorDark: '#4d0083',
+        colorLight: '#e64dff'
     },
     {
         type: 'nonmetal',
-        color: 'lawngreen'
+        color: '#9bf500',
+        colorDark: '#1c7600',
+        colorLight: '#ceff33'
     },
     {
         type: 'basic-metal',
-        color: 'darkorange'
+        color: '#f00',
+        colorDark: '#800000',
+        colorLight: '#ff7f7f'
     },
     {
         type: 'semimetal',
-        color: 'orange'
+        color: '#f80',
+        colorDark: '#800900',
+        colorLight: '#fb3'
     },
     {
         type: 'transition-metal',
-        color: 'deeppink'
+        color: '#ff2462',
+        colorDark: '#cc00af',
+        colorLight: '#ff8ac8'
     },
     {
         type: 'theoretical',
-        color: 'gray'
+        color: '#969696',
+        colorDark: '#4a4a4a',
+        colorLight: '#e3e3e3'
     },
     {
         type: 'halogen',
-        color: 'aqua'
+        color: '#1ff8ff',
+        colorDark: '#007980',
+        colorLight: '#9effff'
     },
     {
         type: 'actinide',
-        color: 'fuchsia'
+        color: '#ff00e1',
+        colorDark: '#800062',
+        colorLight: '#ff7fff'
     },
     {
         type: 'lanthanide',
-        color: 'coral'
+        color: '#0dc700',
+        colorDark: '#004800',
+        colorLight: '#8cff7f'
     }
 ];
 
 
-
+// placing the elements is a huge thorn in my side
+// this switch statement is ugly and takes up so much space
+// but luckily it works
 function elementPlacement(num) {
     switch (num) {
         case '1':
@@ -239,7 +263,8 @@ function elementPlacement(num) {
 }
 
 
-
+// while creating the element divs
+// classes need to be added to the appropriate type
 function elementType(type) {
     switch (type) {
         case 'noble gas':
@@ -281,19 +306,24 @@ function elementType(type) {
 
 
 function getWidth() {
+    // grab the width of the window screen
     width = window.innerWidth;
     
+    // if it's a desktop
     if (width > 960) {
+        // center both tables
         periodicTable.classList.add('flex-center');
         expandedTable.classList.add('flex-center');
         
+        // also reveal and hide the name with the hover effect
         elements.forEach(function(element) {
             element.addEventListener('mouseover', revealFullName);
             element.addEventListener('mouseout', hideFullName);
-        })
-        
-        
+        });
+    // on resize, if the width is adjusted to a smaller size
+    // but both tables have .flex-center due to the desktop size
     } else if (periodicTable.classList.contains('flex-center')) {
+        // remove .flex-center and the hover effect
         periodicTable.classList.remove('flex-center');
         expandedTable.classList.remove('flex-center');
         
@@ -304,32 +334,51 @@ function getWidth() {
     }
 }
 
-
+// change the text of the h1 to the name of the element on mouseover
 function revealFullName() {
+    // this could probably be simplified
     var text = this.nextSibling.firstChild.firstChild.firstChild.textContent;
 
+    // change the color of the text according to the element type
     for (var i = 0; i < elementTypes.length; i++) {
         if (this.classList.contains(elementTypes[i].type)) {
             headerEl.style.color = elementTypes[i].color;
         }
     }
+    // update the h1 text
     headerEl.textContent = text;
 }
 
-
+// change the text back to Periodic Table when mouseout
 function hideFullName() {
     var text = 'Periodic Table';
 
+    // change the color back and reset the text
     headerEl.style.color = 'black';
     headerEl.textContent = text;
 }
 
 
 function displayModal() {
+    // all modals are stored next to the element's div in the table
     modal = this.nextSibling;
-    console.log(modal);
+    modalContent = modal.firstChild;
+    // console.log(modal);
+    // console.log(this);
+    
+    // change the background and border color according to element type
+    for (var i = 0; i < elementTypes.length; i++) {
+        if (this.classList.contains(elementTypes[i].type)) {
+            modalContent.style.backgroundColor = elementTypes[i].color;
+            modalContent.style.borderBottomColor = elementTypes[i].colorDark;
+            modalContent.style.borderLeftColor = elementTypes[i].colorDark;
+            modalContent.style.borderRightColor = elementTypes[i].colorLight;
+            modalContent.style.borderTopColor = elementTypes[i].colorLight;
+        }
+    }
 
     modal.style.display = 'block';
+    
 }
 
 
@@ -338,3 +387,82 @@ function closeModal(ev) {
         modal.style.display = 'none';
     }
 }
+
+
+
+// unused data structure
+// attempting to simplify the switch statement
+var columnsTable = [
+    {
+        column: 0,
+        elementNumbers: ['1', '3', '11', '19', '37', '55', '87']
+    },
+    {
+        column: 1,
+        elementNumbers: ['4', '12', '20', '38', '56', '88']
+    },
+    {
+        column: 2,
+        elementNumbers: ['21', '39']
+    },
+    {
+        column: 3,
+        elementNumbers: ['22', '40', '72', '104']
+    },
+    {
+        column: 4,
+        elementNumbers: ['23', '41', '73', '105']
+    },
+    {
+        column: 5,
+        elementNumbers: ['24', '42', '74', '106']
+    },
+    {
+        column: 6,
+        elementNumbers: ['25', '43', '75', '107']
+    },
+    {
+        column: 7,
+        elementNumbers: ['26', '44', '76', '108']
+    },
+    {
+        column: 8,
+        elementNumbers: ['27', '45', '77', '109']
+    },
+    {
+        column: 9,
+        elementNumbers: ['28', '46', '78', '110']
+    },
+    {
+        column: 10,
+        elementNumbers: ['29', '47', '79', '111']
+    },
+    {
+        column: 11,
+        elementNumbers: ['30', '48', '80', '112']
+    },
+    {
+        column: 12,
+        elementNumbers: ['5', '13', '31', '49', '81', '113']
+    },
+    {
+        column: 13,
+        elementNumbers: ['6', '14','32', '50', '82', '114']
+    },
+    {
+        column: 14,
+        elementNumbers: ['7', '15','33', '51', '83', '115']
+    },
+    {
+        column: 15,
+        elementNumbers: ['8', '16', '34', '52', '84', '116']
+    },
+    {
+        column: 16,
+        elementNumbers: ['9', '17', '35', '53', '85', '117']
+    },
+    {
+        column: 17,
+        elementNumbers: ['2', '10', '18', '36', '54', '86', '118']
+    }
+];

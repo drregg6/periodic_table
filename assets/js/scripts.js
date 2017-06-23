@@ -15,8 +15,11 @@ elements.forEach(function(element, i) {
     
     // create element div's content and its hidden node with information
     elContent = '<div class="el-symbol">' + element.symbol + '</div><div class="el-number">' + element.number + '</div><div class="el-weight">' + element.weight + '</div>';
+    // create the modal-content div which will be a child of the modal div created below
+    // each modal-content will contain text, the element weight, and the element number
     modalContent = '<div class="modal-content"><div class="modal-content-text"><p>' + element.name + '</p><p>' + element.type + '</p><p>' + element.year + '</p></div><div class="modal-content-weight">' + element.weight + '</div><div class="modal-content-number">' + element.number + '</div></div>';
     
+    // placeholder div for the two extra spaces in the table for actinides and lanthanides
     if (element.number === '57' || element.number === '89') {
         elPlaceholder = document.createElement('div');
         elPlaceholder.classList.add('outline');
@@ -33,10 +36,10 @@ elements.forEach(function(element, i) {
     modalDiv.className = 'modal';
     modalDiv.innerHTML = modalContent;
     
-    // element is given its color
+    // element is given its type color
     elementType(element.type);
     
-    // insert the element
+    // insert the element in the table according to column
     elementPlacement(element.number);
 });
 
@@ -49,7 +52,7 @@ elements.forEach(function(element) {
     element.addEventListener('click', displayModal);
 });
 
-
+// run getWidth when the window is resized and loaded on the screen
 window.onresize = getWidth;
 window.onload = getWidth;
 window.onclick = closeModal;

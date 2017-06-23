@@ -28,10 +28,8 @@ flex
 
 .expanded-table {
     flex-wrap: wrap;
-/*    width: 80%;*/
     
     margin: 5px auto;
-/*    margin: 10px auto;*/
 }
 
 .col {
@@ -116,48 +114,48 @@ element div colors
 ------------------------------------------- */
 
 .noble-gas {
-    border-color: blue;
-    color: blue;
+    border-color: #0099ff;
+    color: #0099ff;
 }
 .alkali-metal {
-    border-color: red;
-    color: red;
+    border-color: #612005;
+    color: #612005;
 }
 .alkaline-earth {
-    border-color: brown;
-    color: brown;
+    border-color: #90f;
+    color: #90f;
 }
 .nonmetal {
-    color: lawngreen;
-    border-color: lawngreen;
+    color: #9bf500;
+    border-color: #9bf500;
 }
 .basic-metal {
-    border-color: darkorange;
-    color: darkorange;
+    border-color: #f00;
+    color: #f00;
 }
 .semimetal {
-    border-color: orange;
-    color: orange;
+    border-color: #f80;
+    color: #f80;
 }
 .transition-metal {
-    color: deeppink;
-    border-color: deeppink;
+    color: #ff2462;
+    border-color: #ff2462;
 }
 .theoretical {
-    color: gray;
-    border-color: gray;
+    color: #969696;
+    border-color: #969696;
 }
 .halogen {
-    color: aqua;
-    border-color: aqua;
+    color: #1ff8ff;
+    border-color: #1ff8ff;
 }
 .actinide {
-    color: fuchsia;
-    border-color: fuchsia;
+    color: #ff00e1;
+    border-color: #ff00e1;
 }
 .lanthanide {
-    color: coral;
-    border-color: coral;
+    color: #0dc700;
+    border-color: #0dc700;
 }
 
 /* ------------------------------------------
@@ -191,10 +189,10 @@ modal
 }
 
 .modal-content {
+    color: #fff;
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    border: 5px solid #888;
     width: 250px;
     height: 250px;
     
@@ -204,11 +202,19 @@ modal
 
 .modal-content .modal-content-text {
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 0;
     right: 0;
+    transform: translateY(-50%);
     
-    line-height: 10px;
+    line-height: 2.5px;
+    text-transform: capitalize;
+    font-size: 1.15em;
+}
+
+.modal-content .modal-content-text p:first-child {
+    font-size: 1.25em;
+    font-weight: bold;
 }
 
 .modal-content .modal-content-weight {
